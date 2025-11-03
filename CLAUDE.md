@@ -8,7 +8,28 @@ This is an educational content repository containing a comprehensive n8n workflo
 
 ## Repository Structure
 
-- `n8n-beginner-to-expert-course.md` - Main course curriculum document containing 9 modules covering n8n workflow automation topics
+```
+/
+├── CLAUDE.md                                    # Claude Code guidance and repository instructions
+├── README.md                                    # Main repository README
+├── n8n-beginner-to-expert-course.md            # Original course outline document
+├── assets/                                      # Course assets and resources
+├── diagrams/                                    # Course diagrams and visual aids
+└── modules/                                     # Modular course content
+    ├── module-01-introduction/                  # Week 1: Getting started with n8n
+    ├── module-02-core-concepts/                 # Weeks 2-3: Fundamental concepts
+    ├── module-03-essential-integrations/        # Weeks 4-5: Key integrations
+    ├── module-04-data-transformation/           # Weeks 6-7: Data manipulation
+    ├── module-05-error-handling/                # Week 8: Error handling & monitoring
+    ├── module-06-advanced-features/             # Weeks 9-10: Advanced workflows
+    ├── module-07-enterprise/                    # Weeks 11-12: Self-hosting & security
+    ├── module-08-real-world/                    # Weeks 13-14: Real-world applications
+    └── module-09-expert/                        # Weeks 15-16: Custom nodes & capstone
+```
+
+Each module directory contains:
+- `README.md` - Module overview and learning objectives
+- `week-X/` - Individual week directories with detailed content, exercises, and projects
 
 ## Course Architecture
 
