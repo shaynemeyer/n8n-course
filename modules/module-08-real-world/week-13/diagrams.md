@@ -337,10 +337,10 @@ sequenceDiagram
     Sys->>Sys: Determine Approval Path<br/>Amount > $10k = VP Required
 
     Sys->>Mgr: Request Manager Approval
-    activate Mgr
     Note over Mgr: 24 Hour SLA
 
     alt Manager Responds in Time
+        activate Mgr
         Mgr->>Sys: Approved
         deactivate Mgr
         Sys->>Dir: Request Director Approval
@@ -350,10 +350,9 @@ sequenceDiagram
         Sys->>VP: Request VP Approval
     else No Response After 24 Hours
         Note over Sys: Escalation Triggered
+        Sys->>Mgr: Reminder: Overdue Approval
         Sys->>Dir: Manager Non-Response<br/>Skip to Director
         activate Dir
-        Sys->>Mgr: Reminder: Overdue Approval
-        deactivate Mgr
         Dir->>Sys: Approved
         deactivate Dir
         Sys->>VP: Request VP Approval
@@ -617,10 +616,10 @@ flowchart TD
 ```mermaid
 graph TB
     subgraph "Reconciliation Metrics"
-        TOTAL[Total Transactions: 1,247]
-        AUTO[Auto-Matched: 1,189 (95.3%)]
-        MANUAL[Manual Review: 47 (3.8%)]
-        UNMATCHED[Unmatched: 11 (0.9%)]
+        TOTAL["Total Transactions: 1,247"]
+        AUTO_MATCH["Auto-Matched: 1,189 (95.3%)"]
+        MANUAL_REV["Manual Review: 47 (3.8%)"]
+        UNMATCHED_TRANS["Unmatched: 11 (0.9%)"]
     end
 
     subgraph "Status by Source"
@@ -637,13 +636,13 @@ graph TB
         ACTION3[Update merchant mapping]
     end
 
-    TOTAL --> AUTO
-    TOTAL --> MANUAL
-    TOTAL --> UNMATCHED
+    TOTAL --> AUTO_MATCH
+    TOTAL --> MANUAL_REV
+    TOTAL --> UNMATCHED_TRANS
 
-    style AUTO fill:#4CAF50,stroke:#333,color:#fff
-    style MANUAL fill:#FF9800,stroke:#333,color:#fff
-    style UNMATCHED fill:#F44336,stroke:#333,color:#fff
+    style AUTO_MATCH fill:#4CAF50,stroke:#333,color:#fff
+    style MANUAL_REV fill:#FF9800,stroke:#333,color:#fff
+    style UNMATCHED_TRANS fill:#F44336,stroke:#333,color:#fff
 ```
 
 ---
