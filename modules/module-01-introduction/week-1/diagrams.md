@@ -294,12 +294,12 @@ sequenceDiagram
 graph TB
     subgraph "n8n Data Format"
         ARRAY[Data is ALWAYS an Array<br/>Even for single items]
-        ARRAY --> ITEMS[Each item is an Object<br/>with 'json' property]
+        ARRAY --> ITEMS[Each item is an Object<br/>with json property]
     end
 
     subgraph "Example Data"
-        ITEMS --> EX1[Item 1:<br/>{<br/>  json: {<br/>    name: 'John'<br/>    email: 'john@example.com'<br/>  }<br/>}]
-        ITEMS --> EX2[Item 2:<br/>{<br/>  json: {<br/>    name: 'Jane'<br/>    email: 'jane@example.com'<br/>  }<br/>}]
+        ITEMS --> EX1["Item 1:<br/>name: John<br/>email: john@example.com"]
+        ITEMS --> EX2["Item 2:<br/>name: Jane<br/>email: jane@example.com"]
     end
 
     style ARRAY fill:#EA4B71,stroke:#333,color:#fff
