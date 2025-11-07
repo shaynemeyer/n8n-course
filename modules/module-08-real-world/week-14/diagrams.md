@@ -672,20 +672,26 @@ flowchart TD
 ```mermaid
 graph TB
     subgraph "Daily AI Costs"
-        TODAY[Today: $127.45<br/>↓ 12% vs yesterday]
-        BREAKDOWN[Model Breakdown:<br/>• GPT-4: $89.20 (70%)<br/>• GPT-3.5: $28.15 (22%)<br/>• Embeddings: $10.10 (8%)]
+        TODAY["Today: $127.45<br/>Down 12% vs yesterday"]
+        BREAKDOWN["Model Breakdown:<br/>GPT-4: $89.20 - 70%<br/>GPT-3.5: $28.15 - 22%<br/>Embeddings: $10.10 - 8%"]
     end
 
     subgraph "Usage Metrics"
-        REQUESTS[Total Requests: 8,456<br/>Cache Hit Rate: 34%]
-        AVG_TOKENS[Avg Tokens per Request:<br/>Input: 450<br/>Output: 280]
+        REQUESTS["Total Requests: 8,456<br/>Cache Hit Rate: 34%"]
+        AVG_TOKENS["Avg Tokens per Request:<br/>Input: 450<br/>Output: 280"]
     end
 
     subgraph "Optimization Opportunities"
-        CACHE_MORE[Increase Cache TTL<br/>Potential Savings: $23/day]
-        USE_GPT35[Use GPT-3.5 More<br/>Potential Savings: $15/day]
-        OPTIMIZE_PROMPTS[Shorten Prompts<br/>Potential Savings: $8/day]
+        CACHE_MORE["Increase Cache TTL<br/>Potential Savings: $23/day"]
+        USE_GPT35["Use GPT-3.5 More<br/>Potential Savings: $15/day"]
+        OPTIMIZE_PROMPTS["Shorten Prompts<br/>Potential Savings: $8/day"]
     end
+
+    TODAY --> REQUESTS
+    BREAKDOWN --> AVG_TOKENS
+    AVG_TOKENS --> CACHE_MORE
+    AVG_TOKENS --> USE_GPT35
+    AVG_TOKENS --> OPTIMIZE_PROMPTS
 
     style TODAY fill:#4CAF50,stroke:#333,color:#fff
     style CACHE_MORE fill:#FF9800,stroke:#333,color:#fff
