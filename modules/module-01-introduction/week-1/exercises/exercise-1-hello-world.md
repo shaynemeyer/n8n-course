@@ -28,7 +28,17 @@ Create your first n8n workflow that demonstrates basic node connections and data
 2. Click the "+ New workflow" button in the top left
 3. You'll see an empty canvas with a prompt to add your first node
 
-![New Workflow Canvas](../../../../diagrams/new-workflow-canvas.svg)
+```mermaid
+graph TB
+    subgraph " "
+        direction TB
+        TITLE["n8n Canvas - Empty Workflow"]
+        EMPTY["<br/><br/>Click here to add your first node<br/>or<br/>Drag and drop from the node panel<br/><br/>"]
+    end
+
+    style TITLE fill:none,stroke:none,color:#333,font-weight:bold
+    style EMPTY fill:#fafafa,stroke:#EA4B71,stroke-width:2px,stroke-dasharray: 5 5,color:#666
+```
 
 ### Step 2: Add a Manual Trigger Node
 

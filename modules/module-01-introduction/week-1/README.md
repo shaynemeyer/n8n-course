@@ -92,7 +92,27 @@ See the [Installation Guide](./installation-guide.md) for detailed instructions.
 
 ### 4. n8n Interface Overview
 
-![n8n Interface](../../../diagrams/n8n-interface-overview.svg)
+```mermaid
+graph TB
+    subgraph "n8n Workflow Editor"
+        MENU[Top Menu Bar<br/>File, Execute, Settings]
+        SIDEBAR[Left Sidebar<br/>Node Panel]
+        CANVAS[Central Canvas<br/>Workflow Design Area]
+        SETTINGS[Right Panel<br/>Node Settings & Parameters]
+        EXECUTIONS[Bottom Panel<br/>Execution History & Output]
+    end
+
+    MENU --> CANVAS
+    SIDEBAR --> CANVAS
+    CANVAS --> SETTINGS
+    CANVAS --> EXECUTIONS
+
+    style MENU fill:#EA4B71,stroke:#333,color:#fff
+    style SIDEBAR fill:#4CAF50,stroke:#333,color:#fff
+    style CANVAS fill:#fafafa,stroke:#333
+    style SETTINGS fill:#2196F3,stroke:#333,color:#fff
+    style EXECUTIONS fill:#FF9800,stroke:#333,color:#fff
+```
 
 **Key Components:**
 
